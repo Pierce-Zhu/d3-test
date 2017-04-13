@@ -52,7 +52,11 @@
                 })
                 .on('click', function() {
                     sortRect();
-                });
+                })
+                .append('title')    //这个需要放在排序之后,不然排序不生效
+                .text(function(d) {
+                    return 'value of ' + d;
+                })
                 //Create labels
             svg.selectAll("text")
                 .data(dataset)
